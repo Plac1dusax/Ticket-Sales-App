@@ -1,15 +1,25 @@
 .date_picker_wrapper {
   width: 320px;
-  height: 240px;
-  background-color: red;
+  height: fit-content;
 
   position: absolute;
+
+  border: 1px solid white;
+  border-radius: 0.3em;
 }
 
 .date_picker_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0.2em 0.5em;
+
+  border-bottom: 1px solid white;
+  color: white;
+  background-color: #2c527d;
+
+  font-weight: bold;
 }
 
 .month_and_year {
@@ -24,12 +34,53 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: auto;
+
+  padding: 0.5em;
+
+  background-color: #f5f5f5;
+}
+
+.day {
+  color: black;
+  font-weight: bold;
 }
 
 .current_month {
-  color: yellow;
+  color: black;
 }
 
 .other_month {
-  color: blue;
+  color: #c88a8a;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.date,
+.other_month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.3em;
+}
+
+.date:hover,
+.other_month:hover {
+  background-color: #aeeeee;
+  cursor: pointer;
+}
+
+.today {
+  color: #3d5afe;
+}
+
+.selected_day {
+  color: white;
+  background-color: #2c527d;
+}
+
+.past {
+  color: #9e9c9c;
+  pointer-events: none;
+  cursor: not-allowed;
 }

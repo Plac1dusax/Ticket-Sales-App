@@ -5,7 +5,7 @@ import styles from "../../styles/signup/signUpPage.module.css"
 export default function page() {
   return (
     <div className={styles.signup_page_wrapper}>
-      <CustomForm location={"signup"} />
+      <CustomForm location={"signup"} setShowSpinner={null} />
     </div>
   )
 }

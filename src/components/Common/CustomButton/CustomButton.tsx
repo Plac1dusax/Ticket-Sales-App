@@ -7,28 +7,27 @@ interface CustomButtonProps {
   location: string
   type: "button" | "submit"
   value: string
+  totalPrice: number | null
 }
 
 export default function CustomButton({
   location: location,
   type: type,
   value: value,
+  totalPrice: totalPrice,
 }: CustomButtonProps) {
-  function handleCustomButtonClick(e: any) {
-    switch (location) {
-      case "loginForm":
-        e.preventDefault()
-        break
-      case "signup":
-        e.preventDefault()
-        break
-    }
-  }
-
   return (
     <button
-      onClick={handleCustomButtonClick}
-      className={styles.custom_button}
+      className={`
+        ${
+          totalPrice === 0
+            ? styles.custom_button_disabled
+            : location === "ticket"
+            ? `${styles.custom_button} ${styles.custom_button_green}`
+            : styles.custom_button
+        }
+
+        `}
       type={type}
     >
       {value}

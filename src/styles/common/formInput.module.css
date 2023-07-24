@@ -27,3 +27,7 @@
 
   padding: 1em;
 }
+
+.form_input_header {
+  white-space: nowrap;
+}

@@ -1,5 +1,6 @@
 .login_form,
-.sign_up_form {
+.sign_up_form,
+.purchase_form {
   border: 1px solid black;
   border-radius: 0.3em;
 
@@ -13,7 +14,7 @@
   position: relative;
 
   width: 60%;
-  height: 60%;
+  height: 80%;
 
   padding: 0.5em 1em;
 
@@ -24,7 +25,48 @@
   cursor: pointer;
 }
 
-.sign_up a {
+.sign_up {
   color: #2c527d;
   text-decoration: underline;
+}
+
+.genders {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 120px;
+}
+
+.gender_checkbox_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.error_message {
+  color: red;
+}
+
+.card_information_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.purchase_form input[type="number"] {
+  -moz-appearance: textfield; /* Firefox için spinners'ları gizler */
+  -webkit-appearance: none; /* WebKit tabanlı tarayıcılar için spinners'ları gizler */
+}
+
+/* WebKit tabanlı tarayıcılarda bazı ek özelleştirmeler */
+.purchase_form input[type="number"]::-webkit-inner-spin-button,
+.purchase_form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -1,14 +1,14 @@
 import React from "react"
 import CustomForm from "@/components/Common/CustomForm/CustomForm"
-import styles from "../styles/home/home.module.css"
+import styles from "../styles/login/login.module.css"
 
-export default function Home() {
+export default function Login() {
   return (
-    <div className={styles.home_page_wrapper}>
-      <header className={styles.home_page_header}>
+    <div className={styles.login_page_wrapper}>
+      <header className={styles.login_page_header}>
         <h1>Welcome!</h1>
       </header>
-      <CustomForm location={"home"} />
+      <CustomForm location={"home"} setShowSpinner={null} />
     </div>
   )
 }

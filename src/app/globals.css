@@ -14,3 +14,9 @@ body {
 h1 {
   margin: 0;
 }
+
+a:not(.custom-link):-webkit-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
