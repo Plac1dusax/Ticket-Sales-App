@@ -22,7 +22,7 @@ export default function CustomButton({
         ${
           totalPrice === 0
             ? styles.custom_button_disabled
-            : location === "ticket"
+            : location === "ticket" || "purchaseConfirmed"
             ? `${styles.custom_button} ${styles.custom_button_green}`
             : styles.custom_button
         }
