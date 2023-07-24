@@ -1,0 +1,18 @@
+.toast_message_wrapper {
+  padding: 0.5em 1em;
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 1px solid white;
+  color: white;
+
+  border-radius: 0.3em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  cursor: pointer;
+
+  position: absolute;
+  top: 5%;
+}

@@ -1,0 +1,37 @@
+.seat svg {
+  pointer-events: none;
+}
+
+.male,
+.female {
+  cursor: not-allowed;
+}
+
+.male {
+  color: blue;
+}
+
+.female {
+  color: rgb(226, 81, 105);
+}
+
+.empty_seat {
+  color: green;
+  cursor: pointer;
+}
+
+.empty_seat:hover {
+  color: lightgreen;
+}
+
+.seat_selected {
+  color: red;
+}
+
+.valid_seat {
+  color: ;
+}
+
+.invalid_seat {
+  cursor: not-allowed;
+}

@@ -1,0 +1,34 @@
+.ticket_wrapper {
+  background-color: #aeeeee;
+  border-radius: 0.3em;
+
+  width: 100%;
+  height: 80px;
+
+  padding: 1em;
+
+  cursor: pointer;
+}
+
+.ticket_wrapper a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket_information_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket_information_header {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+.ticket_information {
+  font-weight: 400;
+  font-size: 0.9rem;
+}

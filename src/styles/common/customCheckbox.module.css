@@ -1,0 +1,55 @@
+.checkbox_wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom_checkbox {
+  position: absolute;
+  left: -99999px;
+  opacity: 0;
+}
+
+.custom_checkbox_label {
+  pointer-events: none;
+}
+
+.custom_checkbox_label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 0.3em;
+
+  left: -30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+}
+
+.checkbox_wrapper
+  input[type="checkbox"]:checked
+  + .custom_checkbox_label::before {
+  content: "\2713";
+  background-color: #2c527d;
+  color: white;
+}
+
+@media all and (max-width: 820px) {
+  .custom_checkbox_label::before {
+    width: 14px;
+    height: 14px;
+
+    left: -20px;
+
+    font-size: 9px;
+  }
+}

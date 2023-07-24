@@ -1,0 +1,115 @@
+.ticket_page_wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 1rem;
+}
+
+.ticket {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.bus_container {
+  position: relative;
+  width: 300px;
+  height: 60%;
+
+  border-radius: 0.3em;
+  border: 1px solid white;
+
+  background-color: gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2em;
+}
+
+.seats_grid_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  justify-content: space-between;
+  align-content: space-between;
+
+  width: 100%;
+  height: 100%;
+}
+
+.seats_grid {
+  justify-self: center;
+  align-self: center;
+
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 40px);
+}
+
+.ticket_information_container {
+  border: 1px solid white;
+  border-radius: 0.3em;
+
+  background-color: #aeeeee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 300px;
+  height: 60%;
+}
+
+.location_information,
+.time_information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 80%;
+}
+
+.location_data,
+.time_data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price_information {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.data_header {
+  font-weight: bold;
+  color: white;
+}
+
+.data {
+  font-weight: 600;
+  color: black;
+}
+
+.overall_information {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
