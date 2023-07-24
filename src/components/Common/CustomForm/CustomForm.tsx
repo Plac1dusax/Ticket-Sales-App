@@ -115,11 +115,11 @@ export default function CustomForm({
     e.preventDefault()
 
     if (
-      emptyName ||
-      emptyEmail ||
-      emptyCreditCardNumber ||
-      emptyCVV ||
-      emptyExpirationDate
+      newNameAndSurname === "" ||
+      newEmail === "" ||
+      !newCreditCardNumber ||
+      !newCVV ||
+      !emptyExpirationDate
     ) {
       return setShowErrors(true)
     } else {
@@ -127,7 +127,7 @@ export default function CustomForm({
         setShowSpinner(true)
       }
       setTimeout(() => {
-        router.push("/home")
+        router.push("/purchaseConfirmed")
       }, 1000)
     }
   }

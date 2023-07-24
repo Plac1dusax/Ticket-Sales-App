@@ -1,0 +1,16 @@
+.purchase_confirmed_wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.purchase_confirmed_wrapper h1 {
+  font-weight: bold;
+  color: white;
+}
