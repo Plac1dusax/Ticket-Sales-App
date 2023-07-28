@@ -10,7 +10,7 @@ nextNextDay.setDate(nextDay.getDate() + 1)
 
 const expeditions = [
   {
-    id: v4(),
+    id: 1,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(today, 9, 0),
@@ -19,7 +19,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 2,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(today, 17, 0),
@@ -28,7 +28,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 3,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(today, 13, 30),
@@ -37,7 +37,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 4,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(today, 17, 30),
@@ -46,7 +46,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 5,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(nextDay, 9, 0),
@@ -55,7 +55,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 6,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(nextDay, 17, 0),
@@ -64,7 +64,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 7,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(nextDay, 13, 30),
@@ -73,7 +73,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 8,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(nextDay, 17, 30),
@@ -82,7 +82,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 9,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(nextNextDay, 9, 0),
@@ -91,7 +91,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 10,
     from: "İstanbul",
     to: "Ankara",
     departureTime: formatDateWithTime(nextNextDay, 17, 0),
@@ -100,7 +100,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 11,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(nextNextDay, 13, 30),
@@ -109,7 +109,7 @@ const expeditions = [
     ...generateRandomSeats(),
   },
   {
-    id: v4(),
+    id: 12,
     from: "Antalya",
     to: "İzmir",
     departureTime: formatDateWithTime(nextNextDay, 17, 30),
@@ -128,7 +128,7 @@ export default function handler(req, res) {
 
       if (selectedTicketId) {
         const selectedTicket = expeditions.filter((ticket) => {
-          return ticket.id === selectedTicketId
+          return parseInt(ticket.id) === parseInt(selectedTicketId)
         })
 
         res.status(200).json(selectedTicket)
