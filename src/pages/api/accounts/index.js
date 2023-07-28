@@ -1,4 +1,4 @@
-const accounts = []
+import accounts from "../../../db/accounts"
 
 export default function handler(req, res) {
   const { method, body } = req

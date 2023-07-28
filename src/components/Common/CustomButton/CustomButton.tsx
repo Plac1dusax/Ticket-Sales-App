@@ -8,6 +8,7 @@ interface CustomButtonProps {
   type: "button" | "submit"
   value: string
   totalPrice: number | null
+  isLoading: boolean
 }
 
 export default function CustomButton({
@@ -15,6 +16,7 @@ export default function CustomButton({
   type: type,
   value: value,
   totalPrice: totalPrice,
+  isLoading: isLoading,
 }: CustomButtonProps) {
   return (
     <button
@@ -29,6 +31,7 @@ export default function CustomButton({
 
         `}
       type={type}
+      disabled={isLoading}
     >
       {value}
     </button>
