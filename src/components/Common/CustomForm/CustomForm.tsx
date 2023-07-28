@@ -118,7 +118,7 @@ export default function CustomForm({
     }
   }
 
-  function handlePurchase(e: any) {
+  async function handlePurchase(e: any) {
     e.preventDefault()
 
     if (
@@ -126,9 +126,10 @@ export default function CustomForm({
       newEmail === "" ||
       !newCreditCardNumber ||
       !newCVV ||
-      !emptyExpirationDate
+      !newExpirationDate
     ) {
-      return setShowErrors(true)
+      setShowErrors(true)
+      return
     } else {
       if (setShowSpinner) {
         setShowSpinner(true)
