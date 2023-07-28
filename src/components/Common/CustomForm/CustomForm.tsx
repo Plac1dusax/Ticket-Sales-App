@@ -43,6 +43,7 @@ export default function CustomForm({
   const [emptyExpirationDate, setEmptyExpirationDate] = useState<boolean>(true)
 
   const [showErrors, setShowErrors] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const { setAccount } = useContext(AccountContext)
 
   const router = useRouter()
@@ -54,6 +55,7 @@ export default function CustomForm({
       return setShowErrors(true)
     } else {
       try {
+        setIsLoading(true)
         const response = await axios.post(
           "http://localhost:3000/api/accounts",
           {
@@ -75,6 +77,8 @@ export default function CustomForm({
       } catch (error) {
         setShowErrors(true)
         error ? setInvalidAccount(true) : setInvalidAccount(false)
+      } finally {
+        setIsLoading(false)
       }
     }
   }
@@ -92,6 +96,7 @@ export default function CustomForm({
       return
     } else {
       try {
+        setIsLoading(true)
         await axios.post("http://localhost:3000/api/accounts", {
           action: "create",
           id: uuidv4(),
@@ -107,6 +112,8 @@ export default function CustomForm({
       } catch (error) {
         setShowErrors(true)
         setEmailAlreadyInUse(true)
+      } finally {
+        setIsLoading(false)
       }
     }
   }
@@ -201,6 +208,7 @@ export default function CustomForm({
           type={"submit"}
           value={"Login"}
           totalPrice={null}
+          isLoading={isLoading}
         />
         <div>
           Don't have an account?{" "}
@@ -307,6 +315,7 @@ export default function CustomForm({
           type={"submit"}
           value={"Sign up"}
           totalPrice={null}
+          isLoading={isLoading}
         />
       </form>
     )
@@ -407,6 +416,7 @@ export default function CustomForm({
           type={"submit"}
           value={"Purchase"}
           totalPrice={null}
+          isLoading={isLoading}
         />
       </form>
     )

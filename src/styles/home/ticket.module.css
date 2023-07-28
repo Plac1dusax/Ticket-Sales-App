@@ -1,3 +1,8 @@
+.ticket_link {
+  position: relative;
+  width: 100%;
+}
+
 .ticket_wrapper {
   background-color: #aeeeee;
   border-radius: 0.3em;
@@ -8,9 +13,7 @@
   padding: 1em;
 
   cursor: pointer;
-}
 
-.ticket_wrapper a {
   display: flex;
   justify-content: space-between;
   align-items: center;

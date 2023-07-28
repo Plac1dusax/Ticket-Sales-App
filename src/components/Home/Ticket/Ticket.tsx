@@ -15,8 +15,11 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails }) => {
   const arrivalDateFormatted = format(arrivalDate, "dd.MM.yyyy HH:mm")
 
   return (
-    <div className={styles.ticket_wrapper}>
-      <Link href={`/ticket?id=${ticketDetails.id}`}>
+    <Link
+      className={styles.ticket_link}
+      href={`/ticket?id=${ticketDetails.id}`}
+    >
+      <div className={styles.ticket_wrapper}>
         <div className={styles.ticket_information_wrapper}>
           <div className={styles.ticket_information_header}>Departure</div>
           <div className={styles.ticket_information}>
@@ -47,8 +50,8 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails }) => {
             {ticketDetails.emptySeatCount}
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   )
 }
 

@@ -42,6 +42,7 @@ export default function Home() {
   const [emptyDestination, setEmptyDestination] = useState<boolean>(true)
   const [emptyDate, setEmptyDate] = useState<boolean>(true)
   const [errors, setErrors] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [showEmptyTicket, setShowEmptyTicket] = useState<boolean>(false)
 
   function handleShowDatePicker() {
@@ -63,6 +64,7 @@ export default function Home() {
       setErrors(true)
     } else {
       try {
+        setIsLoading(false)
         axios
           .post("http://localhost:3000/api/expeditions", {
             departure,
@@ -79,6 +81,8 @@ export default function Home() {
           })
       } catch (error) {
         console.log(error)
+      } finally {
+        setIsLoading(true)
       }
     }
   }
@@ -177,26 +181,28 @@ export default function Home() {
         <div className={styles.tickets}>
           <h2 className={styles.header}>Tickets</h2>
           <div className={styles.tickets_wrapper}>
-            {tickets
-              ? tickets.map((ticket) => {
-                  const ticketDetails: TicketType = {
-                    id: ticket.id,
-                    to: ticket.to,
-                    from: ticket.from,
-                    departureTime: ticket.departureTime,
-                    arrivalTime: ticket.arrivalTime,
-                    seats: ticket.seats,
-                    price: ticket.price,
-                    emptySeatCount: ticket.emptySeatCount,
-                  }
+            {isLoading
+              ? tickets
+                ? tickets.map((ticket) => {
+                    const ticketDetails: TicketType = {
+                      id: ticket.id,
+                      to: ticket.to,
+                      from: ticket.from,
+                      departureTime: ticket.departureTime,
+                      arrivalTime: ticket.arrivalTime,
+                      seats: ticket.seats,
+                      price: ticket.price,
+                      emptySeatCount: ticket.emptySeatCount,
+                    }
 
-                  return (
-                    <Ticket
-                      key={ticketDetails.id}
-                      ticketDetails={ticketDetails}
-                    />
-                  )
-                })
+                    return (
+                      <Ticket
+                        key={ticketDetails.id}
+                        ticketDetails={ticketDetails}
+                      />
+                    )
+                  })
+                : null
               : null}
           </div>
         </div>
